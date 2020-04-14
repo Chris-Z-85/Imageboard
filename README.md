@@ -22,4 +22,4 @@ attended between January and March 2020 in Berlin, Germany.
 
  ## Preview
 
-![Project Image](https://github.com/Chris-Z-85/connect-four/blob/master/Donut_Lovers/imageboard.gif?raw=true)
+![Project Image](https://github.com/Chris-Z-85/connect-four/blob/master/Imageboard/donutlovers.gif?raw=true)
