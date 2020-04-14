@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Welcome to Donut Lovers' Board</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="main">
+        <my-first-component v-if='id' :id='id' @message='handleMessage'></my-first-component>
+
+        <h1>DONUT LOVERS' BOARD</h1>
+
+        <form>
+            <input v-model="title" type="text" name='title' placeholder="Image title" autocomplete="off" required>
+            <input v-model="description" type="text" name='description' placeholder="Description" autocomplete="off"
+                required>
+            <input v-model="username" type="text" name='username' placeholder="Your name" autocomplete="off" required>
+            <label><input @change="handleChange" type="file" name="file" accept="image/*"
+                    style="display:none;">📂</label>
+            <button @click="handleClick">Upload</button>
+        </form>
+
+        <div class="image-container">
+            <div class="images" v-for="image in images">
+                <a :href="'#' + image.id">
+                    <div :style="{overflow: 'hidden'}" class="image-card">
+                        <img v-bind:style="{ width: '100%', height: '100%'}" class="image" :src="image.url" />
+                        <!-- <p>{{ image.title }}</p> -->
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div v-if="more" id="more">
+            <button @click="getMoreImages" id="more-button">More</button>
+        </div>
+
+    </div>
+    </div>
+
+    </div>
+
+    <script id="my-component" type="text/x-template">
+                <div id="modal">
+                    <div class="xbutton" @click='handleMessage'>X</div>
+
+                    <div id="modal-container">
+                    
+                        <div class="modal-image">
+                            <img :src="images.url" alt="image">
+                            <h2 style="margin: 0;">{{ images.title }}</h2>
+                            <h3 style="margin: 0;">"{{ images.description }}"</h3>
+                            <p style="margin-top: 0;">uploaded by {{ images.username}}</p>
+                        </div>
+
+                        <div id="modal-comment">
+                            <h3>Do you like this picture? Add a comment below:</h3>
+                            <input v-model="username" type="text" name="username" placeholder="Name" autocomplete="off" class="input-field" id="user-comment">
+                            <input v-model="comment" type="text" name="comment" placeholder="Comment" autocomplete="off" class="input-field" id="comment">
+                                <button @click="submitComments" onSubmit="window.location.reload()">Submit</button>
+                                <h3>Comments:</h3>
+                                    <div id="comment-item" v-for="comment in comments">
+                                        <div id="user-in-comment"><p>{{comment.username}}:</p></div>
+                                        <div id="users-comment"><p>"{{comment.comment}}"</p></div>
+                                        <div id="date"><p>{{comment.created_at}}</p></div>
+                    </div>
+                    </div>
+                </div>
+    </script>
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
