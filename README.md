@@ -8,8 +8,7 @@ Instagram-like imageboard
  * CSS 3
  * Javascript
  * Vue.js
- * Node.js
- * Express
+ * Node.js with Express
  * Postgres SQL
  * AWS S3
  
@@ -19,6 +18,12 @@ A website where anybody could go and post an image of their choosing, along with
 
 This project was created during the Full Stack Web Development course at <a href="http://www.spiced-academy.com/">SPICED Academy</a>, which I 
 attended between January and March 2020 in Berlin, Germany. 
+
+## Features
+
+* Homepage displays uploaded images sorted with the most recent ones first.
+* Users can upload images with their username, title and description.
+* When image is clicked a page pops up where the image can be seen in a larger size and users are able to add comments.
 
  ## Preview
 
