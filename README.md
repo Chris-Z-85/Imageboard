@@ -22,8 +22,8 @@ attended between January and March 2020 in Berlin, Germany.
 ## Features
 
 * Homepage displays uploaded images sorted with the most recent ones first.
-* Users can upload images with their name, title and description.
-* When image is clicked a page pops up, where the image can be seen in a larger size and users are able to add comments.
+* Users can upload images with title, description and their name.
+* When image is clicked a window pops up, where the image can be seen in a larger size and users are able to add comments.
 
  ## Preview
 
